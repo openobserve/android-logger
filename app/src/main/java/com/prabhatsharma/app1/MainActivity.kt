@@ -47,13 +47,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun StartLoggingWithDatadogSDK(): Boolean {
+
         val configuration = Configuration.Builder(
             logsEnabled = true,
             tracesEnabled = false,
             crashReportsEnabled = false,
             rumEnabled = false
-        )
-            .useCustomLogsEndpoint("http://192.168.86.165:8080")
+        )//.useCustomLogsEndpoint("http://192.168.86.165:8080")
+            .useCustomLogsEndpoint("http://192.168.1.41/test_projects/endpoint/index.php")
             .build()
 
         val credentials = Credentials("pubf92340d3d2ddbd287fb0792181c6556f", "test", "first_app", "com.prabhatsharma.android")
